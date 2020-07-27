@@ -1,13 +1,29 @@
 import knex from '../database/connection';
 import { Request, Response } from 'express';
+import Sales from '../models/ModelSales';
+import Clients from '../models/ModelClient';
 
+interface SalesType{
+    id: string,
+    id_client: string,
+    value: number,
+    content: string,
+    obs: string,
+    payment: string
+}
 class SalesController{
     async create(request: Request, response: Response){
         const {id_client, content, value, payment, obs} = request.body;
+
         const dataSale = {
-            id_client, content, value, payment, obs
+            id_client,
+            content, value, payment, obs
         }
+        
         const sale = await knex('sales').insert(dataSale);
+       // const client = await Clients.findOne({ff_id})
+       // const id_client = client?._id
+        //const sale = await Sales.create(dataSale)
 
         if(!sale){
             return response.status(400).json({message: 'Insert error'})
@@ -19,7 +35,9 @@ class SalesController{
     async index(request:Request, response: Response){
         const sales = await knex('sales')
         .join('clients', 'sales.id_client', '=','clients.id')
-        .select('clients.ff_id', 'clients.name', 'sales.*')
+        .select('clients.ff_id', 'clients.name', 'sales.*') 
+        //const sales = await Sales.aggregate([{lookup: {from:Clients.collection.name, localField: 'id_client', foreignField: '_id'}}]);
+    
         
         if(!sales){
             return response.status(502).json({message: 'Internal Server Error'})
