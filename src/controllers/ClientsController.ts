@@ -9,8 +9,9 @@ class ClientsController {
         const {dataClient} = request.body;
         
         try{
-            await knex('clients').insert(dataClient)
-            //await Clients.create(request.body)
+        
+            //await knex('clients').insert(dataClient)
+            await Clients.create(dataClient)
             
             return response.json({message: 'Cliente Cadastrado'})
 
@@ -21,14 +22,15 @@ class ClientsController {
     }
 
     async edit(request: Request, response: Response){
-        const {name, telephone, nickname, ff_id,city,uf, id} = request.body;
+        const {name, telephone, nickname, ff_id,city,uf, _id} = request.body;
         const data = {
             name,telephone,nickname,ff_id,city, uf
         }
+      
         
         try{
             //await knex('clients').where('id', id).update(data)
-            await Clients.findByIdAndUpdate({_id: id},data)
+            await Clients.findByIdAndUpdate({_id},data)
             return response.json({message: 'Cliente Editado'})
         }catch(error){
             return response.status(400).json({message: 'Update error'})

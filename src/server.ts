@@ -5,11 +5,12 @@ import mongoose from 'mongoose';
 import morgan from 'morgan';
 import routes from './routes';
 
+import dotenv from 'dotenv';
+dotenv.config()
+
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/ffdiamonds', {useNewUrlParser: true, useUnifiedTopology: true})
-
-
+mongoose.connect(`${process.env.MONGO_URL}`, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 app.use(cors())
