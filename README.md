@@ -1,19 +1,17 @@
-# FFDiamondsAPI
+<h2 color='#0099ff'>Api da aplicação FFDiamonds</h2>
 
-<h2>Api da aplicação FFDiamonds</h2>
-
-<h2>Projeto Freelancer</h2>
+<h2 color = '#999999'>Projeto Freelancer</h2>
 
 <strong>Sobre</strong>
 
 <p>Aplicação voltada para melhor gerenciamento e organização de clientes e vendas em uma lojinha virtual</p>
 
-<h3>Stack utilizada </h3>
-<p>- Node/Express</p>
-<p>- Typescript</p>
-<p>- MongoDB</p>
+<h3 color = '#333333'>Stack utilizada </h3>
+<p color = '#00cc99'>- Node/Express</p>
+<p color = '#0066cc'>- Typescript</p>
+<p color = '#00ff99'>- MongoDB</p>
 
-<h3>Funcionalidades / Rotas<h3>
+<h3>Funcionalidades / Rotas</h3>
 <p>- Cadastro de cliente</p>
 <p>- Registro de venda</p>
 <p>- Listagem de todos os clientes e pesquisa por nome e outros atributos</p>
