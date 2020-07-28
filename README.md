@@ -18,3 +18,5 @@
 <p>- Listagem de todas as vendas e pesquisa de vendas por cliente com filtro de nome e outros atributos</p>
 <p>- Edição de dados sobre cliente</p>
 <p>- Edição de dados sobre venda</p>
+
+<p>Inicialmente a base de dados seria desenvolvida com MySql, por isso algumas configurações do mesmo ainda estão na API incluindo todas as rotas com suas respctivas querys comentadas, visando futuras pesquisas.</p>
