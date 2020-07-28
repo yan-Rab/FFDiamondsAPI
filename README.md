@@ -1,6 +1,6 @@
-<h2 color='#0099ff'>Api da aplicação FFDiamonds</h2>
+<h2 style = color:'#0099ff';>Api da aplicação FFDiamonds</h2>
 
-<h2 color = '#999999'>Projeto Freelancer</h2>
+<h2  color = '#999999'>Projeto Freelancer</h2>
 
 <strong>Sobre</strong>
 
