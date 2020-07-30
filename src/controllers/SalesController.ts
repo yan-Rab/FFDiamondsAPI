@@ -1,7 +1,7 @@
 import knex from '../database/connection';
 import { Request, Response } from 'express';
 import Sales from '../models/ModelSales';
-import Clients from '../models/ModelClient';
+
 
 interface SalesType{
     id: string,
@@ -91,6 +91,16 @@ class SalesController{
         return response.json(searchSales)
     }
 
+    async destroy(request: Request, response: Response){
+        const {_id} = request.params;
+        try{
+            await Sales.findByIdAndDelete({_id})
+            return response.json({message: 'Venda deletada!'})
+        }catch(error){
+            return response.json({message: 'Delete Error'})
+        }
+       
+    }
    
 }
 

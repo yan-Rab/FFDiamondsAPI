@@ -75,6 +75,7 @@ class ClientsController {
         }
         return response.json(clients)
     }
+
 }
 
 

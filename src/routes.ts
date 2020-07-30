@@ -16,4 +16,5 @@ routes.post('/sale', salesController.create)
 routes.put('/sales', salesController.edit)
 routes.get('/sales', salesController.index)
 routes.get('/searchSales', salesController.indexLike)
+routes.delete('/sale/:_id', salesController.destroy)
 export default routes;
